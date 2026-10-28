@@ -1,0 +1,223 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+   If a copy of the MPL was not distributed with this file, You can obtain one at https://mozilla.org/MPL/2.0/. */
+
+.onboarding {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: var(--color-bg);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.onboarding__panel {
+  display: grid;
+  gap: 24px;
+  width: min(560px, 100%);
+  padding: 32px;
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-overlay);
+}
+
+.onboarding__intro h1 {
+  margin: 16px 0 6px;
+  font-size: 24px;
+  letter-spacing: -0.02em;
+}
+
+.onboarding__intro p {
+  margin: 0;
+  color: var(--color-text-2);
+}
+
+.onboarding__options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+/* Opción: radio 16 = preview 8 + padding 8. */
+.theme-option {
+  position: relative;
+  display: grid;
+  gap: 12px;
+  padding: 8px 8px 14px;
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  color: var(--color-text);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition-property: border-color, scale;
+  transition-duration: var(--press-ms);
+  transition-timing-function: var(--ease-out);
+}
+
+.theme-option:active {
+  scale: var(--press-scale);
+}
+
+.theme-option[aria-checked="true"] {
+  border-color: var(--color-primary);
+}
+
+.theme-option__text {
+  display: grid;
+  gap: 2px;
+  padding: 0 6px;
+}
+
+.theme-option__text span {
+  color: var(--color-text-2);
+  font-size: 13px;
+}
+
+.theme-option__check {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+  opacity: 0;
+  scale: 0.25;
+  transition-property: opacity, scale;
+  transition-duration: 300ms;
+  transition-timing-function: cubic-bezier(0.2, 0, 0, 1);
+}
+
+.theme-option[aria-checked="true"] .theme-option__check {
+  opacity: 1;
+  scale: 1;
+}
+
+/* Mini vista previa con colores fijos de cada tema. */
+.theme-preview {
+  display: grid;
+  grid-template-columns: 30% 1fr;
+  height: 110px;
+  overflow: hidden;
+  border-radius: var(--radius-sm);
+  border: 1px solid #e3e3e6;
+}
+
+.theme-preview--light {
+  --p-bg: #f5f5f7;
+  --p-surface: #ffffff;
+  --p-line: #e3e3e6;
+  --p-text: #111113;
+  --p-primary: #1f6feb;
+}
+
+.theme-preview--dark {
+  --p-bg: #0b0b0c;
+  --p-surface: #161618;
+  --p-line: #2c2c30;
+  --p-text: #f2f2f3;
+  --p-primary: #3b82f6;
+  border-color: #2c2c30;
+}
+
+.theme-preview__side {
+  display: grid;
+  align-content: start;
+  gap: 6px;
+  padding: 10px 8px;
+  background: var(--p-surface);
+  border-right: 1px solid var(--p-line);
+}
+
+.theme-preview__side i {
+  height: 6px;
+  border-radius: 3px;
+  background: var(--p-line);
+}
+
+.theme-preview__side i:first-child {
+  background: var(--p-primary);
+}
+
+.theme-preview__main {
+  display: grid;
+  align-content: start;
+  gap: 8px;
+  padding: 10px;
+  background: var(--p-bg);
+}
+
+.theme-preview__main b {
+  width: 55%;
+  height: 8px;
+  border-radius: 4px;
+  background: var(--p-text);
+}
+
+.theme-preview__card {
+  display: grid;
+  gap: 6px;
+  padding: 8px;
+  border-radius: 6px;
+  background: var(--p-surface);
+  border: 1px solid var(--p-line);
+}
+
+.theme-preview__card i {
+  height: 22px;
+  border-radius: 4px;
+  border: 1px dashed var(--p-line);
+}
+
+.theme-preview__card em {
+  width: 40%;
+  height: 8px;
+  border-radius: 4px;
+  background: var(--p-primary);
+}
+
+/* Entrada escalonada: 100 ms entre bloques. */
+@media (prefers-reduced-motion: no-preference) {
+  .stagger {
+    animation: onb-enter var(--enter-ms) var(--ease-out) both;
+    animation-delay: calc(var(--i, 0) * var(--stagger-ms));
+  }
+
+  @keyframes onb-enter {
+    from {
+      opacity: 0;
+      filter: blur(4px);
+      translate: 0 12px;
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .stagger {
+    animation: onb-fade var(--enter-ms) var(--ease-out) both;
+  }
+
+  @keyframes onb-fade {
+    from {
+      opacity: 0;
+    }
+  }
+
+  .theme-option:active {
+    scale: 1;
+  }
+}
+
+@media (max-width: 520px) {
+  .onboarding__options {
+    grid-template-columns: 1fr;
+  }
+}

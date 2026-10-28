@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Seguridad: qué protege Trasvo y qué no | Trasvo</title>
+  <meta name="description" content="Cómo funciona la seguridad de Trasvo, sin letra chica: emparejamiento, confirmación, verificación de archivos, lo que todavía no cifra, puertos y cómo reportar problemas.">
+  <meta name="theme-color" content="#1f6feb">
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="preload" href="assets/fonts/geist-latin-wght.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/site.css">
+  <script src="assets/site.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#contenido">Saltar al contenido</a>
+  <header class="top">
+    <div class="wrap top__in">
+      <a class="logo" href="./" aria-label="Trasvo, inicio"><img src="assets/logo.svg" alt="" width="32" height="32">Trasvo</a>
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav" aria-label="Menú"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+      <nav class="nav" id="nav" aria-label="Principal">
+        <a href="instalar.html">Instalar</a>
+        <a href="ayuda.html">Ayuda</a>
+        <a href="preguntas.html">Preguntas</a>
+        <a href="seguridad.html" aria-current="page">Seguridad</a>
+        <a class="gh" href="https://github.com/trasvo-app/trasvo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/></svg>Código</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido" class="wrap">
+    <div class="doc-hero">
+      <h1>Seguridad, sin letra chica</h1>
+      <p>Qué protege Trasvo hoy, qué no protege todavía y cómo comprobarlo tú. Si algo de esto no te cierra, prefiero que lo sepas antes de instalar.</p>
+    </div>
+
+    <div class="doc-layout">
+      <aside class="toc" aria-label="En esta página">
+        <h2>En esta página</h2>
+        <ol>
+          <li><a href="#resumen">En corto</a></li>
+          <li><a href="#protege">Lo que protege</a></li>
+          <li><a href="#no-protege">Lo que todavía no</a></li>
+          <li><a href="#red">Red y puertos</a></li>
+          <li><a href="#binarios">Instaladores</a></li>
+          <li><a href="#planes">Lo que viene</a></li>
+          <li><a href="#reportar">Reportar un problema</a></li>
+        </ol>
+      </aside>
+
+      <article class="prose">
+        <h2 id="resumen">En corto</h2>
+        <div class="callout callout--warn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v4M12 17h.01"/><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/></svg>
+          <p>Trasvo todavía <strong>no cifra</strong> lo que viaja entre tus equipos. Los archivos pasan por tu Wi-Fi tal cual, así que úsala en la red de tu casa o tu trabajo, no en redes públicas o compartidas con desconocidos. Tampoco firmamos el instalador, por eso Windows y Android avisan. Cada archivo se comprueba al llegar y siempre confirmas antes de guardar.</p>
+        </div>
+
+        <h2 id="protege">Lo que protege</h2>
+        <ul>
+          <li><strong>Nadie se conecta sin tu permiso.</strong> Para enlazar dos equipos hace falta el código de seis dígitos que muestra la app (o el QR, que lo incluye), o que aceptes en pantalla la petición de «Cerca».</li>
+          <li><strong>No se puede adivinar el código probando.</strong> Después de 10 códigos incorrectos, el equipo rechaza toda conexión por código hasta que reinicies la app. El código cambia cada vez que abres Trasvo y se compara en tiempo constante.</li>
+          <li><strong>El enlace usa un token aleatorio de 128 bits</strong>, elegido al conectar y válido solo hasta que alguien toque «Desconectar».</li>
+          <li><strong>Nada se guarda sin que lo apruebes.</strong> Cada envío muestra qué archivos son y cuánto pesan, y espera tu respuesta.</li>
+          <li><strong>Los archivos llegan enteros.</strong> Cada archivo viaja con su huella SHA-256 y se comprueba al terminar; si no coincide, se descarta. Mientras llega se escribe como <code>.part</code> y solo se renombra cuando pasa la comprobación.</li>
+          <li><strong>No escribe fuera de la carpeta de descargas.</strong> Se rechazan nombres de archivo con rutas absolutas, <code>..</code> y nombres reservados de Windows, y nunca se reemplaza un archivo existente.</li>
+          <li><strong>Sin servidores intermedios.</strong> No hay cuenta ni nube: los archivos van directo de un equipo al otro.</li>
+        </ul>
+
+        <h2 id="no-protege">Lo que todavía no protege</h2>
+        <ul>
+          <li><strong>Cifrado.</strong> El tráfico viaja sin cifrar dentro de tu red. Alguien con acceso a la misma red y las herramientas adecuadas podría ver o alterar los archivos mientras pasan. La verificación SHA-256 detecta daños accidentales, pero no protege contra alguien que controle la red.</li>
+          <li><strong>Identidad del otro equipo.</strong> La app muestra el nombre del otro dispositivo, pero ese nombre lo elige cada equipo. Conéctate solo con equipos que reconozcas.</li>
+          <li><strong>Lo que anuncia en la red.</strong> Para que «Cerca» funcione, cada app anuncia en tu red local el nombre del dispositivo y un identificador aleatorio. Cualquiera en la misma red puede verlos.</li>
+        </ul>
+
+        <h2 id="red">Red y puertos (para técnicos)</h2>
+        <table>
+          <tbody>
+            <tr><th>Puerto</th><td>TCP 47520 (si está ocupado, la app usa otro libre y lo muestra)</td></tr>
+            <tr><th>Búsqueda</th><td>mDNS / DNS-SD, servicio <code>_ftransfer._tcp</code>, puerto UDP 5353</td></tr>
+            <tr><th>Salida a internet</th><td>La app de PC no se conecta a internet (el instalador puede descargar WebView2 de Microsoft si tu Windows no lo tiene). En el celular, solo la librería del lector de QR (ver <a href="privacidad.html">Privacidad</a>).</td></tr>
+            <tr><th>Firewall de Windows</th><td>Basta con permitirla en redes privadas. No hace falta abrirla en redes públicas.</td></tr>
+            <tr><th>Instalación</th><td>Por usuario, sin administrador, en <code>%LOCALAPPDATA%\Trasvo</code>. Silenciosa con <code>/S</code>.</td></tr>
+            <tr><th>Protocolo</th><td>Documentado en <a href="https://github.com/trasvo-app/trasvo/blob/main/docs/protocol.md">docs/protocol.md</a></td></tr>
+          </tbody>
+        </table>
+
+        <h2 id="binarios">Instaladores</h2>
+        <p>Los instaladores se compilan desde el código público y se publican en <a href="https://github.com/trasvo-app/trasvo/releases">GitHub Releases</a> con un archivo <code>SHA256SUMS.txt</code>. El APK está firmado siempre con la misma llave: Android rechaza cualquier actualización firmada con otra, así que nadie puede reemplazar tu Trasvo por una versión modificada sin esa llave. Esto no te protege si la llave del autor se viera comprometida; por eso puedes comparar la huella SHA-256 de cada descarga con la publicada.</p>
+        <p>El instalador de Windows no tiene firma de código (cuesta dinero cada año). Puedes <a href="instalar.html#verificar">comprobar la huella SHA-256</a> antes de abrirlo.</p>
+
+        <h2 id="planes">Lo que viene</h2>
+        <ul>
+          <li>Cifrado TLS, con la huella del certificado dentro del QR para que nadie pueda hacerse pasar por tu PC.</li>
+          <li>Firma del instalador de Windows y publicación en Play Store.</li>
+        </ul>
+        <p>No hay fechas comprometidas. Los cambios quedan registrados en el historial público del proyecto.</p>
+
+        <h2 id="reportar">Reportar un problema de seguridad</h2>
+        <p>Escríbeme a <a href="mailto:trasvoapp@gmail.com?subject=Seguridad">trasvoapp@gmail.com</a> con el asunto «Seguridad», con los pasos para reproducirlo. Te respondo lo antes posible y te pido que no lo publiques hasta que haya una versión corregida. Si quieres, te menciono en las notas de esa versión.</p>
+      </article>
+    </div>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap">
+      <div class="foot__grid">
+        <div>
+          <a class="logo" href="./"><img src="assets/logo.svg" alt="" width="28" height="28">Trasvo</a>
+          <p class="foot__note">Hecha por un desarrollador independiente. Escríbeme a <a href="mailto:trasvoapp@gmail.com">trasvoapp@gmail.com</a>.</p>
+        </div>
+        <div><h4>Producto</h4><ul><li><a href="instalar.html">Instalar</a></li><li><a href="ayuda.html">Ayuda</a></li><li><a href="preguntas.html">Preguntas</a></li></ul></div>
+        <div><h4>Confianza</h4><ul><li><a href="seguridad.html">Seguridad</a></li><li><a href="https://github.com/trasvo-app/trasvo">Código fuente</a></li><li><a href="https://github.com/trasvo-app/trasvo/releases">Versiones y SHA-256</a></li></ul></div>
+        <div><h4>Legal</h4><ul><li><a href="privacidad.html">Privacidad</a></li><li><a href="terminos.html">Términos</a></li><li><a href="licencia.html">Licencia</a></li></ul></div>
+      </div>
+      <div class="foot__legal"><span>© 2026 Trasvo · Código abierto bajo MPL-2.0</span><span>Versión <span data-version>0.1.0</span></span></div>
+    </div>
+  </footer>
+</body>
+</html>

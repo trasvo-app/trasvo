@@ -1,0 +1,187 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+   If a copy of the MPL was not distributed with this file, You can obtain one at https://mozilla.org/MPL/2.0/. */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: "Segoe UI Variable Text", "Segoe UI", system-ui, sans-serif;
+  font-size: 15px;
+  -webkit-font-smoothing: antialiased;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 236px minmax(0, 1fr);
+  height: 100%;
+}
+
+/* Menú lateral */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 20px 12px;
+  background: var(--color-surface);
+  border-right: 1px solid var(--color-border);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 8px 20px;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.brand__logo {
+  display: block;
+  width: 36px;
+  height: 36px;
+  flex: none;
+}
+
+.nav__item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  min-height: 42px;
+  padding: 0 12px;
+  border: 0;
+  border-radius: var(--radius-md);
+  background: transparent;
+  color: var(--color-text-2);
+  font: inherit;
+  font-weight: 600;
+  text-align: left;
+  cursor: pointer;
+  transition-property: background-color, color;
+  transition-duration: var(--fast-ms);
+  transition-timing-function: var(--ease-out);
+}
+
+.nav__item[aria-current="page"] {
+  background: var(--color-primary-tint);
+  color: var(--color-primary);
+}
+
+@media (hover: hover) {
+  .nav__item:not([aria-current="page"]):hover {
+    background: var(--color-sunken);
+    color: var(--color-text);
+  }
+}
+
+.sidebar__footer {
+  margin-top: auto;
+  padding: 12px;
+  border-radius: var(--radius-lg);
+  background: var(--color-sunken);
+  font-size: 13px;
+}
+
+.sidebar__footer strong {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 2px;
+  font-size: 14px;
+}
+
+.sidebar__footer span {
+  color: var(--color-text-2);
+}
+
+.sidebar__link {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid var(--color-border);
+}
+
+.sidebar__link .dot {
+  flex: none;
+  background: var(--color-text-2);
+}
+
+.sidebar__link[data-status="connected"] .dot {
+  background: var(--color-success);
+}
+
+.sidebar__link[data-status="reconnecting"] .dot {
+  background: var(--color-warning);
+}
+
+/* Contenido */
+.main {
+  overflow-y: auto;
+  padding: 28px 32px 32px;
+}
+
+.page-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.page-header h1 {
+  margin: 0 0 4px;
+  font-size: 26px;
+  letter-spacing: -0.02em;
+}
+
+.page-header p {
+  margin: 0;
+  color: var(--color-text-2);
+}
+
+.page-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(300px, 1fr);
+  gap: 20px;
+  align-items: start;
+}
+
+.stack {
+  display: grid;
+  gap: 20px;
+}
+
+@media (max-width: 980px) {
+  .page-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 760px) {
+  .layout {
+    grid-template-columns: 72px minmax(0, 1fr);
+  }
+
+  .brand__name,
+  .nav__label,
+  .sidebar__footer {
+    display: none;
+  }
+
+  .nav__item {
+    justify-content: center;
+    padding: 0;
+  }
+}

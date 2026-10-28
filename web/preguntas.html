@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Preguntas frecuentes: avisos, seguridad y uso | Trasvo</title>
+  <meta name="description" content="Respuestas claras sobre Trasvo: si es gratis, por qué Windows y Android avisan al instalar, si es segura, si necesita internet, límites y qué todavía no hace.">
+  <meta name="theme-color" content="#1f6feb">
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="preload" href="assets/fonts/geist-latin-wght.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/site.css">
+  <script src="assets/site.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#contenido">Saltar al contenido</a>
+  <header class="top">
+    <div class="wrap top__in">
+      <a class="logo" href="./" aria-label="Trasvo, inicio"><img src="assets/logo.svg" alt="" width="32" height="32">Trasvo</a>
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav" aria-label="Menú"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+      <nav class="nav" id="nav" aria-label="Principal">
+        <a href="instalar.html">Instalar</a>
+        <a href="ayuda.html">Ayuda</a>
+        <a href="preguntas.html" aria-current="page">Preguntas</a>
+        <a href="seguridad.html">Seguridad</a>
+        <a class="gh" href="https://github.com/trasvo-app/trasvo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/></svg>Código</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido" class="wrap" style="padding-bottom:96px">
+    <div class="doc-hero">
+      <h1>Preguntas frecuentes</h1>
+      <p>Si tu pregunta no está, escríbeme a <a href="mailto:trasvoapp@gmail.com">trasvoapp@gmail.com</a>.</p>
+    </div>
+
+    <div class="prose" style="max-width:780px">
+      <h2>Sobre Trasvo</h2>
+      <div class="faq">
+        <details><summary>¿Es gratis? ¿Dónde está la trampa?</summary><div class="answer">
+          <p>Es gratis y no tiene trampa: no muestra anuncios, no vende datos, no pide cuenta y no tiene versión de pago. El código es abierto (licencia MPL-2.0), así que cualquiera puede revisar qué hace.</p>
+        </div></details>
+        <details><summary>¿Quién la hace?</summary><div class="answer">
+          <p>Un desarrollador independiente, que firma como <strong>fv54367</strong>. Puedes escribirle a <a href="mailto:trasvoapp@gmail.com">trasvoapp@gmail.com</a> y ver todo el historial del proyecto en <a href="https://github.com/trasvo-app/trasvo">GitHub</a>.</p>
+        </div></details>
+        <details><summary>¿Necesito internet?</summary><div class="answer">
+          <p>No. Necesitas que la PC y el celular estén en la misma red (el mismo Wi-Fi, o la PC por cable al mismo router). Los archivos van por esa red y no salen a internet.</p>
+        </div></details>
+        <details><summary>¿Funciona con iPhone, Mac o Linux?</summary><div class="answer">
+          <p>Todavía no. Por ahora es solo para PC con Windows y celulares Android.</p>
+        </div></details>
+        <details><summary>¿Funciona sin Wi-Fi, con datos móviles?</summary><div class="answer">
+          <p>Con datos móviles no: los dos equipos tienen que estar en la misma red local. Si no tienes router, puede funcionar conectando la PC al punto de acceso (hotspot) del celular, pero todavía no lo probamos a fondo.</p>
+        </div></details>
+      </div>
+
+      <h2>Instalación y avisos</h2>
+      <div class="faq">
+        <details><summary>¿Por qué Windows dice «Windows protegió su PC»? ¿Es un virus?</summary><div class="answer">
+          <p>Windows muestra ese aviso con cualquier programa que no tiene una firma digital paga y que todavía no descargó mucha gente. Trasvo es nueva y no tiene esa firma. El aviso no significa que tenga un virus, pero tampoco es una garantía de nada: por eso publicamos la huella SHA-256 de cada descarga y el código completo.</p>
+          <p><a href="instalar.html#windows">Qué tocar en el aviso</a> · <a href="instalar.html#verificar">Cómo comprobar el archivo</a></p>
+        </div></details>
+        <details><summary>¿Por qué Android pide permiso y aparece Play Protect?</summary><div class="answer">
+          <p>Porque el APK se instala desde fuera de Play Store. Android pide que autorices a esa app (normalmente Chrome) a instalar apps, y Play Protect ofrece analizar Trasvo porque todavía no la conoce. Puedes dejar que la analice.</p>
+        </div></details>
+        <details><summary>¿Cuándo va a estar en Play Store y firmada para Windows?</summary><div class="answer">
+          <p>Está en los planes, sin fecha todavía. Cuando pase, los avisos van a desaparecer o reducirse.</p>
+        </div></details>
+        <details><summary>¿Puedo instalarla en la PC del trabajo?</summary><div class="answer">
+          <p>No pide permisos de administrador y se instala solo para tu usuario. Igual, consulta antes con quien administre los equipos: hoy Trasvo no cifra el tráfico dentro de la red (ver <a href="seguridad.html">Seguridad</a>). Para instalaciones masivas, el instalador acepta <code>/S</code> para instalar en silencio.</p>
+        </div></details>
+        <details><summary>¿Por qué el APK pesa 66 MB?</summary><div class="answer">
+          <p>Es un solo archivo que funciona en cualquier celular Android: trae la app preparada para los distintos tipos de procesador y el lector de códigos QR. Instalada ocupa menos que la descarga en la mayoría de los celulares.</p>
+        </div></details>
+        <details><summary>¿Cómo la actualizo?</summary><div class="answer">
+          <p>Por ahora no se actualiza sola. Descarga la versión nueva desde esta página e instálala encima de la anterior: no pierdes la configuración ni lo recibido.</p>
+        </div></details>
+      </div>
+
+      <h2>Uso</h2>
+      <div class="faq">
+        <details><summary>¿Qué tan rápido es?</summary><div class="answer">
+          <p>Depende de tu red: el límite lo pone tu Wi-Fi, no Trasvo. Suele ir más rápido con el celular en 5 GHz y la PC conectada por cable al router.</p>
+        </div></details>
+        <details><summary>¿Hay límite de tamaño o cantidad?</summary><div class="answer">
+          <p>Trasvo no pone un límite propio: envía los archivos por partes, así que puedes mandar videos de varios GB o carpetas enteras. El límite es el espacio libre del equipo que recibe.</p>
+        </div></details>
+        <details><summary>¿Dónde quedan los archivos?</summary><div class="answer">
+          <p>En la PC, en tu carpeta Descargas (puedes cambiarla en Ajustes). En el celular, en <code>Descargas/Trasvo</code>, y las fotos aparecen en tu galería.</p>
+        </div></details>
+        <details><summary>¿Tengo que conectarme cada vez?</summary><div class="answer">
+          <p>No. Te conectas una vez y quedan enlazados para enviar en los dos sentidos hasta que toques «Desconectar». Si se corta el Wi-Fi, se reconectan solos.</p>
+        </div></details>
+        <details><summary>Se cortó un envío desde el celular. ¿Por qué?</summary><div class="answer">
+          <p>Por ahora, si sales de la app durante un envío, Android puede pausarla y el envío se corta. Deja Trasvo abierta hasta que termine. Que siga en segundo plano es una de las próximas mejoras.</p>
+        </div></details>
+        <details><summary>No encuentra mi PC o mi celular</summary><div class="answer">
+          <p>Revisa que estén en la misma red y que Windows haya dado permiso a Trasvo en redes privadas. Si sigue sin aparecer, conéctalos con el QR o escribiendo la IP y el código. <a href="ayuda.html#problemas">Más soluciones</a>.</p>
+        </div></details>
+      </div>
+
+      <h2>Privacidad y seguridad</h2>
+      <div class="faq">
+        <details><summary>¿Mis archivos pasan por algún servidor?</summary><div class="answer">
+          <p>No. Van directo de un equipo al otro por tu red. No tenemos servidores, así que nosotros no vemos tus archivos. Como el tráfico todavía no está cifrado, alguien que controle tu misma red sí podría verlos: usa Trasvo en redes de confianza.</p>
+        </div></details>
+        <details><summary>¿Es segura?</summary><div class="answer">
+          <p>Te contamos exactamente qué protege y qué no. Para conectarse hace falta un código, escanear el QR o que aceptes en pantalla; nada se guarda sin que lo apruebes, y cada archivo se comprueba al llegar. Lo que todavía no hace es <strong>cifrar</strong> lo que viaja: alguien que controle tu misma red podría ver los archivos mientras pasan. Por eso recomendamos usarla en la red de tu casa o trabajo y no en Wi-Fi públicos.</p>
+          <p><a href="seguridad.html">Todos los detalles</a></p>
+        </div></details>
+        <details><summary>¿Recopila datos?</summary><div class="answer">
+          <p>Trasvo no tiene cuentas, anuncios ni estadísticas propias, y no envía tus archivos ni datos a ningún servidor. La única excepción que conocemos: el lector de QR del celular usa una librería de Google (ML Kit) que puede enviar a Google métricas de uso y rendimiento del lector. <a href="privacidad.html">Política de privacidad</a>.</p>
+        </div></details>
+        <details><summary>¿Cómo reporto un problema de seguridad?</summary><div class="answer">
+          <p>Escríbeme a <a href="mailto:trasvoapp@gmail.com">trasvoapp@gmail.com</a> con el asunto «Seguridad» antes de publicarlo, así lo puedo arreglar primero.</p>
+        </div></details>
+      </div>
+    </div>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap">
+      <div class="foot__grid">
+        <div>
+          <a class="logo" href="./"><img src="assets/logo.svg" alt="" width="28" height="28">Trasvo</a>
+          <p class="foot__note">Hecha por un desarrollador independiente. Escríbeme a <a href="mailto:trasvoapp@gmail.com">trasvoapp@gmail.com</a>.</p>
+        </div>
+        <div><h4>Producto</h4><ul><li><a href="instalar.html">Instalar</a></li><li><a href="ayuda.html">Ayuda</a></li><li><a href="preguntas.html">Preguntas</a></li></ul></div>
+        <div><h4>Confianza</h4><ul><li><a href="seguridad.html">Seguridad</a></li><li><a href="https://github.com/trasvo-app/trasvo">Código fuente</a></li><li><a href="https://github.com/trasvo-app/trasvo/releases">Versiones y SHA-256</a></li></ul></div>
+        <div><h4>Legal</h4><ul><li><a href="privacidad.html">Privacidad</a></li><li><a href="terminos.html">Términos</a></li><li><a href="licencia.html">Licencia</a></li></ul></div>
+      </div>
+      <div class="foot__legal"><span>© 2026 Trasvo · Código abierto bajo MPL-2.0</span><span>Versión <span data-version>0.1.0</span></span></div>
+    </div>
+  </footer>
+</body>
+</html>

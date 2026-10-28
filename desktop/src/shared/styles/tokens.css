@@ -1,0 +1,94 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+   If a copy of the MPL was not distributed with this file, You can obtain one at https://mozilla.org/MPL/2.0/. */
+
+/* Valores de design/tokens.json. Mantener sincronizados.
+   El tema se elige en el primer inicio y se guarda (ver shared/theme). */
+:root {
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 28px;
+
+  --press-scale: 0.96;
+  --press-ms: 150ms;
+  --fast-ms: 150ms;
+  --enter-ms: 300ms;
+  --exit-ms: 150ms;
+  --stagger-ms: 100ms;
+  --ease-out: ease-out;
+}
+
+:root,
+:root[data-theme="light"] {
+  color-scheme: light;
+
+  --color-bg: #f5f5f7;
+  --color-surface: #ffffff;
+  --color-sunken: #efeff1;
+  --color-border: #e3e3e6;
+  --color-input-border: #c9c9ce;
+  --color-text: #111113;
+  --color-text-2: #6e6e73;
+  --color-text-3: #a1a1a6;
+  --color-primary: #1f6feb;
+  --color-primary-hover: #1a5fcc;
+  --color-primary-tint: #e8f0fd;
+  --color-on-primary: #ffffff;
+  --color-warning: #f5b400;
+  --color-warning-tint: #fff4d6;
+  --color-on-warning-tint: #6b4e00;
+  --color-error: #e5484d;
+  --color-error-tint: #fdecec;
+  --color-on-error-tint: #8c1d21;
+  --color-success: #30a46c;
+  --color-success-tint: #e6f6ee;
+  --color-on-success-tint: #14532d;
+  --color-info: #5b7c99;
+  --color-info-tint: #e9eff4;
+  --color-highlight-orange: #f76b15;
+  --color-highlight-pink: #e93d82;
+
+  --shadow-card: 0 1px 2px rgb(17 17 19 / 0.04), 0 8px 24px rgb(17 17 19 / 0.05);
+  --shadow-raised: 0 1px 2px rgb(17 17 19 / 0.08), 0 2px 6px rgb(17 17 19 / 0.06);
+  --shadow-overlay: 0 24px 64px rgb(17 17 19 / 0.18);
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+
+  --color-bg: #0b0b0c;
+  --color-surface: #161618;
+  --color-sunken: #1f1f22;
+  --color-border: #2c2c30;
+  --color-input-border: #3a3a3f;
+  --color-text: #f2f2f3;
+  --color-text-2: #a0a0a6;
+  --color-text-3: #6b6b70;
+  --color-primary: #3b82f6;
+  --color-primary-hover: #60a5fa;
+  --color-primary-tint: #13233f;
+  --color-on-primary: #ffffff;
+  --color-warning: #ffca28;
+  --color-warning-tint: #3a2f0b;
+  --color-on-warning-tint: #ffe08a;
+  --color-error: #f2555a;
+  --color-error-tint: #3b1517;
+  --color-on-error-tint: #ffb4b6;
+  --color-success: #3dd68c;
+  --color-success-tint: #0f2e1f;
+  --color-on-success-tint: #a7f3c9;
+  --color-info: #7c9cb8;
+  --color-info-tint: #1a2530;
+  --color-highlight-orange: #ff8b3e;
+  --color-highlight-pink: #f06ba0;
+
+  --shadow-card: 0 0 0 1px rgb(255 255 255 / 0.02), 0 8px 24px rgb(0 0 0 / 0.4);
+  --shadow-raised: 0 1px 2px rgb(0 0 0 / 0.5), 0 2px 6px rgb(0 0 0 / 0.35);
+  --shadow-overlay: 0 24px 64px rgb(0 0 0 / 0.6);
+}
+
+/* Al cambiar de tema no se anima nada: evita que los colores "se arrastren". */
+.no-transitions,
+.no-transitions * {
+  transition: none !important;
+}

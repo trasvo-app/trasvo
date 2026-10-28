@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ayuda: conectar, enviar y recibir archivos | Trasvo</title>
+  <meta name="description" content="Cómo conectar tu PC y tu celular con Trasvo (Cerca, QR o IP), enviar y recibir archivos en los dos sentidos, dónde se guardan y qué hacer si algo no funciona.">
+  <meta name="theme-color" content="#1f6feb">
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="preload" href="assets/fonts/geist-latin-wght.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/site.css">
+  <script src="assets/site.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#contenido">Saltar al contenido</a>
+  <header class="top">
+    <div class="wrap top__in">
+      <a class="logo" href="./" aria-label="Trasvo, inicio"><img src="assets/logo.svg" alt="" width="32" height="32">Trasvo</a>
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav" aria-label="Menú"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+      <nav class="nav" id="nav" aria-label="Principal">
+        <a href="instalar.html">Instalar</a>
+        <a href="ayuda.html" aria-current="page">Ayuda</a>
+        <a href="preguntas.html">Preguntas</a>
+        <a href="seguridad.html">Seguridad</a>
+        <a class="gh" href="https://github.com/trasvo-app/trasvo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/></svg>Código</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido" class="wrap">
+    <div class="doc-hero">
+      <h1>Ayuda</h1>
+      <p>Todo lo que hace Trasvo y cómo usarlo. Si todavía no la instalaste, empieza por la <a href="instalar.html">guía de instalación</a>.</p>
+    </div>
+
+    <div class="doc-layout">
+      <aside class="toc" aria-label="En esta página">
+        <h2>En esta página</h2>
+        <ol>
+          <li><a href="#antes">Antes de empezar</a></li>
+          <li><a href="#conectar">Conectar</a></li>
+          <li><a href="#enviar">Enviar</a></li>
+          <li><a href="#recibir">Recibir</a></li>
+          <li><a href="#desconectar">Desconectar</a></li>
+          <li><a href="#carpeta">Carpeta de descargas</a></li>
+          <li><a href="#problemas">Si algo no funciona</a></li>
+          <li><a href="#requisitos">Requisitos</a></li>
+        </ol>
+      </aside>
+
+      <article class="prose">
+        <h2 id="antes">Antes de empezar</h2>
+        <p>La PC y el celular tienen que estar en <strong>la misma red</strong>: el mismo Wi-Fi o, en el caso de la PC, conectada por cable al mismo router. No importa si el celular está en 2,4 o 5 GHz. Los archivos no pasan por internet.</p>
+        <p>Abre Trasvo en los dos equipos. En el celular, deja la app abierta mientras conectas y mientras envías o recibes.</p>
+
+        <h2 id="conectar">Conectar la PC y el celular</h2>
+        <p>Se conectan <strong>una sola vez</strong>, desde cualquiera de los dos lados. Después quedan enlazados para enviar en ambos sentidos hasta que alguno toque «Desconectar». Hay tres formas; usa la que te resulte más cómoda.</p>
+
+        <h3>Cerca (la más fácil)</h3>
+        <ul>
+          <li><strong>Desde el celular:</strong> toca <strong>Buscar mi PC</strong> y elige tu PC en la lista.</li>
+          <li><strong>Desde la PC:</strong> en <strong>Conectar</strong>, pestaña <strong>Cerca</strong>, toca <strong>Conectar</strong> junto a tu celular.</li>
+        </ul>
+        <p>El otro equipo muestra «… quiere conectarse» y hay que tocar <strong>Aceptar</strong>. Así nadie del mismo Wi-Fi puede conectarse sin tu permiso.</p>
+
+        <h3>Código QR</h3>
+        <p>En la PC, abre <strong>Conectar → QR</strong>. En el celular, toca <strong>Escanear QR</strong> y apunta la cámara a la pantalla. El QR ya lleva el código, así que no hace falta aceptar nada más.</p>
+
+        <h3>IP y código</h3>
+        <p>Sirve cuando «Cerca» no encuentra al otro equipo. Cada app muestra su IP (por ejemplo <code>192.168.0.15:47520</code>) y un código de seis dígitos que cambia cada vez que la abres.</p>
+        <ul>
+          <li><strong>Desde el celular:</strong> toca <strong>Escribir IP</strong> y escribe la IP y el código que ves en la PC.</li>
+          <li><strong>Desde la PC:</strong> en <strong>Conectar → IP</strong>, escribe la IP y el código que muestra el celular en su pantalla de inicio.</li>
+        </ul>
+
+        <h2 id="enviar">Enviar archivos</h2>
+        <h3>De la PC al celular</h3>
+        <p>Ve a <strong>Enviar</strong>. Arrastra archivos o carpetas a la ventana, o usa <strong>Elegir archivos</strong> o <strong>Elegir carpeta</strong>. Revisa la lista y toca <strong>Enviar</strong>.</p>
+        <h3>Del celular a la PC</h3>
+        <p>Toca <strong>Enviar fotos y archivos</strong>. Elige fotos y videos de tu galería o documentos del celular, y toca <strong>Enviar</strong>. La primera vez, Android te pide permiso para mostrar tus fotos; si no lo das, igual puedes elegir archivos con el selector del sistema.</p>
+        <p>Las carpetas llegan con sus subcarpetas. Puedes cancelar un envío en cualquier momento.</p>
+
+        <h2 id="recibir">Recibir</h2>
+        <p>Cuando el otro equipo te manda algo, Trasvo te muestra qué archivos son y cuánto pesan, y <strong>te pregunta antes de guardar</strong>. Si aceptas, cada archivo se comprueba al llegar (con su huella SHA-256): si algo se dañó en el camino, no se guarda.</p>
+        <ul>
+          <li><strong>En la PC</strong> llega a tu carpeta <strong>Descargas</strong>, o a la que elijas en Ajustes.</li>
+          <li><strong>En el celular</strong> llega a <code>Descargas/Trasvo</code>. Lo ves en la app Archivos y las fotos aparecen en tu galería.</li>
+        </ul>
+        <p>Si ya existe un archivo con el mismo nombre, Trasvo no lo reemplaza: guarda el nuevo como <code>nombre (1).jpg</code>.</p>
+
+        <h2 id="desconectar">Desconectar</h2>
+        <p>Toca <strong>Desconectar</strong> en cualquiera de los dos equipos y se desconectan los dos. Si se corta el Wi-Fi, ambos muestran «Reconectando…» y vuelven a conectarse solos cuando vuelve la red (lo intentan durante 10 minutos).</p>
+
+        <h2 id="carpeta">Cambiar la carpeta de descargas (PC)</h2>
+        <p>En la PC, abre <strong>Ajustes</strong>:</p>
+        <ul>
+          <li><strong>Cambiar carpeta…</strong> elige otra carpeta. Queda guardada aunque cierres la app.</li>
+          <li><strong>Abrir carpeta</strong> la abre en el Explorador.</li>
+          <li><strong>Usar Descargas</strong> vuelve a la carpeta de siempre.</li>
+        </ul>
+
+        <h2 id="problemas">Si algo no funciona</h2>
+        <h3>«Cerca» no encuentra al otro equipo</h3>
+        <ul>
+          <li>Comprueba que los dos estén en la <strong>misma red</strong>. Las redes de invitados y muchos Wi-Fi públicos aíslan a los equipos entre sí: así no se pueden ver.</li>
+          <li>En la PC, revisa que Windows haya dado permiso a Trasvo en <strong>Redes privadas</strong> (Configuración → Privacidad y seguridad → Seguridad de Windows → Firewall y protección de red → Permitir una aplicación a través del firewall).</li>
+          <li>Si tu red figura como «Pública» en Windows, cámbiala a «Privada» si es la de tu casa o trabajo.</li>
+          <li>Prueba con <strong>QR</strong> o <strong>IP y código</strong>, que no dependen de la búsqueda automática.</li>
+        </ul>
+        <h3>«Código incorrecto» o «Bloqueado»</h3>
+        <p>El código cambia cada vez que abres la app: revisa que sea el que se ve ahora. Después de 10 códigos incorrectos, el equipo deja de aceptar conexiones por código hasta que cierres y vuelvas a abrir Trasvo. Es para que nadie pueda adivinarlo probando.</p>
+        <h3>El envío se corta en el celular</h3>
+        <p>Por ahora, si sales de Trasvo o se apaga la pantalla durante un envío largo, Android puede pausar la app y el envío se corta. Deja la app abierta hasta que termine. Estamos trabajando en que siga en segundo plano.</p>
+        <h3>Cambió la IP</h3>
+        <p>El router puede dar otra IP a un equipo de un día para otro. Si usaste IP y no conecta, mira la IP nueva en la app, o usa «Cerca».</p>
+        <p>¿Nada de esto ayudó? Escríbeme a <a href="mailto:trasvoapp@gmail.com">trasvoapp@gmail.com</a> contándome qué ves, o abre un reporte en <a href="https://github.com/trasvo-app/trasvo/issues">GitHub</a>.</p>
+
+        <h2 id="requisitos">Requisitos</h2>
+        <table>
+          <thead><tr><th></th><th>PC</th><th>Celular</th></tr></thead>
+          <tbody>
+            <tr><th>Sistema</th><td>Windows 10 u 11 (64 bits)</td><td>Android 7.0 o más nuevo</td></tr>
+            <tr><th>Espacio</th><td>Unos 6 MB</td><td>Unos 150 MB</td></tr>
+            <tr><th>Red</th><td colspan="2">La misma red local (Wi-Fi o cable al mismo router)</td></tr>
+            <tr><th>Permisos</th><td>No pide administrador</td><td>Fotos y videos (opcional), cámara para el QR</td></tr>
+          </tbody>
+        </table>
+      </article>
+    </div>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap">
+      <div class="foot__grid">
+        <div>
+          <a class="logo" href="./"><img src="assets/logo.svg" alt="" width="28" height="28">Trasvo</a>
+          <p class="foot__note">Hecha por un desarrollador independiente. Escríbeme a <a href="mailto:trasvoapp@gmail.com">trasvoapp@gmail.com</a>.</p>
+        </div>
+        <div><h4>Producto</h4><ul><li><a href="instalar.html">Instalar</a></li><li><a href="ayuda.html">Ayuda</a></li><li><a href="preguntas.html">Preguntas</a></li></ul></div>
+        <div><h4>Confianza</h4><ul><li><a href="seguridad.html">Seguridad</a></li><li><a href="https://github.com/trasvo-app/trasvo">Código fuente</a></li><li><a href="https://github.com/trasvo-app/trasvo/releases">Versiones y SHA-256</a></li></ul></div>
+        <div><h4>Legal</h4><ul><li><a href="privacidad.html">Privacidad</a></li><li><a href="terminos.html">Términos</a></li><li><a href="licencia.html">Licencia</a></li></ul></div>
+      </div>
+      <div class="foot__legal"><span>© 2026 Trasvo · Código abierto bajo MPL-2.0</span><span>Versión <span data-version>0.1.0</span></span></div>
+    </div>
+  </footer>
+</body>
+</html>

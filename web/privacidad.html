@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Política de privacidad | Trasvo</title>
+  <meta name="description" content="Qué datos usa Trasvo, cuáles no, y qué terceros intervienen al descargarla o usar el lector de QR.">
+  <meta name="theme-color" content="#1f6feb">
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/geist-latin-wght.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/site.css">
+  <script src="assets/site.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#contenido">Saltar al contenido</a>
+  <header class="top">
+    <div class="wrap top__in">
+      <a class="logo" href="./" aria-label="Trasvo, inicio"><img src="assets/logo.svg" alt="" width="32" height="32">Trasvo</a>
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav" aria-label="Menú"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+      <nav class="nav" id="nav" aria-label="Principal">
+        <a href="instalar.html">Instalar</a>
+        <a href="ayuda.html">Ayuda</a>
+        <a href="preguntas.html">Preguntas</a>
+        <a href="seguridad.html">Seguridad</a>
+        <a class="gh" href="https://github.com/trasvo-app/trasvo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/></svg>Código</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido" class="wrap">
+    <div class="doc-hero">
+      <h1>Política de privacidad</h1>
+      <p class="updated">Vigente desde el 27 de octubre de 2026.</p>
+    </div>
+
+    <div class="doc-layout">
+      <aside class="toc" aria-label="En esta página">
+        <h2>En esta página</h2>
+        <ol>
+          <li><a href="#resumen">Resumen</a></li>
+          <li><a href="#responsable">Responsable</a></li>
+          <li><a href="#app">Qué usa la app</a></li>
+          <li><a href="#permisos">Permisos de Android</a></li>
+          <li><a href="#terceros">Terceros</a></li>
+          <li><a href="#sitio">Este sitio</a></li>
+          <li><a href="#derechos">Tus derechos</a></li>
+          <li><a href="#cambios">Cambios</a></li>
+        </ol>
+      </aside>
+
+      <article class="prose">
+        <h2 id="resumen">Resumen</h2>
+        <p>Trasvo no tiene servidores, no pide cuenta y no muestra anuncios. El autor no recibe ni guarda tus datos personales: los archivos que envías van directo de un equipo tuyo a otro por tu red local y nunca pasan por nosotros. Para funcionar, la app sí trata en tus equipos algunos datos, como el nombre del dispositivo y tu IP local, que se explican abajo. La única comunicación con un tercero desde la app es la del lector de QR del celular, que también explicamos abajo.</p>
+
+        <h2 id="responsable">Responsable</h2>
+        <p>Trasvo es un proyecto de código abierto mantenido por un desarrollador independiente que firma como <strong>fv54367</strong>. Para cualquier consulta sobre privacidad: <a href="mailto:trasvoapp@gmail.com">trasvoapp@gmail.com</a>.</p>
+
+        <h2 id="app">Qué usa la app y dónde queda</h2>
+        <p>Todo lo que sigue se procesa y se guarda <strong>solo en tus equipos</strong>:</p>
+        <ul>
+          <li><strong>Los archivos que envías y recibes.</strong> Viajan por tu red local entre los dos equipos y se guardan en la carpeta de descargas que elijas.</li>
+          <li><strong>El nombre de tu dispositivo, un identificador aleatorio y tu IP local.</strong> Se anuncian en tu red local para que el otro equipo te encuentre en «Cerca» y se muestran al conectarte. Cualquiera en la misma red puede verlos. No salen de tu red.</li>
+          <li><strong>Ajustes y actividad reciente</strong> (tema, carpeta de descargas, lista de envíos). Quedan guardados solo en el equipo y no se incluyen en copias de seguridad de Android. La lista de envíos incluye los nombres de los archivos. En Android se borran al desinstalar; en Windows el desinstalador conserva tus datos, y puedes borrarlos eliminando las carpetas <code>app.trasvo.desktop</code> dentro de <code>%APPDATA%</code> y <code>%LOCALAPPDATA%</code>.</li>
+        </ul>
+        <p>Trasvo no incluye estadísticas, analítica, informes de errores automáticos ni publicidad.</p>
+
+        <h2 id="permisos">Permisos de Android</h2>
+        <table>
+          <tbody>
+            <tr><th>Fotos y videos</th><td>Para mostrarte tu galería y que elijas qué enviar. Es opcional: sin él puedes elegir archivos con el selector del sistema.</td></tr>
+            <tr><th>Cámara</th><td>Solo para escanear el código QR de la PC. Las imágenes no se guardan ni se envían.</td></tr>
+            <tr><th>Red y Wi-Fi multicast</th><td>Para conectarse con la PC y encontrarla en tu red local.</td></tr>
+          </tbody>
+        </table>
+
+        <h2 id="terceros">Terceros</h2>
+        <ul>
+          <li><strong>Google ML Kit (lector de QR, solo Android).</strong> El escaneo se hace en el celular, pero según las condiciones de Google, ML Kit puede contactar a los servidores de Google para recibir actualizaciones y enviar métricas de uso y rendimiento del lector. No recibe las imágenes de la cámara ni tus archivos. Ver la <a href="https://developers.google.com/ml-kit/terms">información de Google sobre ML Kit</a>.</li>
+          <li><strong>GitHub (descargas).</strong> Los instaladores se descargan desde GitHub, que registra datos técnicos como tu dirección IP según su <a href="https://docs.github.com/es/site-policy/privacy-policies/github-general-privacy-statement">declaración de privacidad</a>.</li>
+          <li><strong>Google Play Protect (opcional).</strong> Si al instalar eliges «Analizar app», Android envía la app a Google para revisarla, según las condiciones de Google.</li>
+          <li><strong>Microsoft (Windows).</strong> SmartScreen y, si hace falta, la descarga de WebView2 durante la instalación funcionan según las condiciones de Microsoft.</li>
+        </ul>
+
+        <h2 id="sitio">Este sitio</h2>
+        <p>Este sitio está alojado en GitHub Pages. No usa cookies, ni analítica, ni recursos de otros dominios (la tipografía está alojada aquí mismo). GitHub puede registrar tu dirección IP al servir las páginas, según su declaración de privacidad.</p>
+
+        <h2 id="derechos">Tus derechos</h2>
+        <p>El autor no tiene en servidores propios datos personales tuyos que consultar, corregir o borrar: lo que la app guarda está en tus equipos y lo controlas tú, y se elimina al desinstalar. Si nos escribes por correo, usamos tu dirección solo para responderte (es nuestro interés legítimo atender tu consulta) y puedes pedir en cualquier momento que borremos esos mensajes.</p>
+        <p>Tienes derecho a pedir acceso, rectificación y supresión de los datos que podamos tener sobre ti, y a reclamar ante la autoridad de protección de datos de tu país. En Argentina es la Agencia de Acceso a la Información Pública (AAIP), que atiende las denuncias y reclamos de quienes consideren afectados sus derechos de acuerdo con la Ley 25.326.</p>
+        <p>Los servicios de terceros de arriba (GitHub y Google) pueden tratar datos fuera de tu país, por ejemplo en Estados Unidos, según sus propias políticas.</p>
+        <p>Trasvo no está dirigida específicamente a menores y el autor no recopila datos de nadie, sin importar la edad.</p>
+
+        <h2 id="cambios">Cambios</h2>
+        <p>Si esta política cambia, publicaremos la nueva versión aquí con su fecha. Los cambios quedan registrados en el historial público del proyecto en GitHub.</p>
+      </article>
+    </div>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap">
+      <div class="foot__grid">
+        <div>
+          <a class="logo" href="./"><img src="assets/logo.svg" alt="" width="28" height="28">Trasvo</a>
+          <p class="foot__note">Hecha por un desarrollador independiente. Escríbeme a <a href="mailto:trasvoapp@gmail.com">trasvoapp@gmail.com</a>.</p>
+        </div>
+        <div><h4>Producto</h4><ul><li><a href="instalar.html">Instalar</a></li><li><a href="ayuda.html">Ayuda</a></li><li><a href="preguntas.html">Preguntas</a></li></ul></div>
+        <div><h4>Confianza</h4><ul><li><a href="seguridad.html">Seguridad</a></li><li><a href="https://github.com/trasvo-app/trasvo">Código fuente</a></li><li><a href="https://github.com/trasvo-app/trasvo/releases">Versiones y SHA-256</a></li></ul></div>
+        <div><h4>Legal</h4><ul><li><a href="privacidad.html">Privacidad</a></li><li><a href="terminos.html">Términos</a></li><li><a href="licencia.html">Licencia</a></li></ul></div>
+      </div>
+      <div class="foot__legal"><span>© 2026 Trasvo · Código abierto bajo MPL-2.0</span><span>Versión <span data-version>0.1.0</span></span></div>
+    </div>
+  </footer>
+</body>
+</html>

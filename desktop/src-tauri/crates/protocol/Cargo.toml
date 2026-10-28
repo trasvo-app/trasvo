@@ -1,0 +1,9 @@
+[package]
+name = "ft-protocol"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+ft-core = { path = "../core" }
+serde.workspace = true
+serde_json.workspace = true

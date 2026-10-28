@@ -1,0 +1,162 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+   If a copy of the MPL was not distributed with this file, You can obtain one at https://mozilla.org/MPL/2.0/. */
+
+.dropzone {
+  display: grid;
+  justify-items: center;
+  gap: 8px;
+  padding: 32px 24px;
+  border: 2px dashed var(--color-input-border);
+  border-radius: var(--radius-xl);
+  background: var(--color-surface);
+  text-align: center;
+  transition-property: background-color, border-color;
+  transition-duration: var(--fast-ms);
+  transition-timing-function: var(--ease-out);
+}
+
+.dropzone[data-active="true"] {
+  background: var(--color-primary-tint);
+  border-color: var(--color-primary);
+}
+
+.dropzone strong {
+  font-size: 18px;
+}
+
+.dropzone__hint {
+  color: var(--color-text-2);
+}
+
+.dropzone__icon {
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  margin-bottom: 4px;
+  border-radius: var(--radius-lg);
+  background: var(--color-primary-tint);
+  color: var(--color-primary);
+}
+
+.dropzone__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.queue__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.queue {
+  display: grid;
+  gap: 4px;
+  max-height: 280px;
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  list-style: none;
+}
+
+.queue__item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px;
+  border-radius: var(--radius-md);
+}
+
+@media (hover: hover) {
+  .queue__item:hover {
+    background: var(--color-sunken);
+  }
+
+  .icon-btn:hover {
+    background: var(--color-border);
+    color: var(--color-text);
+  }
+
+  .link:hover {
+    color: var(--color-text);
+  }
+}
+
+.queue__icon {
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-sm);
+  background: var(--color-primary-tint);
+  color: var(--color-primary);
+}
+
+.queue__icon[data-kind="folder"] {
+  background: var(--color-warning-tint);
+  color: var(--color-on-warning-tint);
+}
+
+.queue__text {
+  display: grid;
+  min-width: 0;
+  flex: 1;
+}
+
+.queue__name {
+  overflow: hidden;
+  font-weight: 600;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.queue__folder {
+  overflow: hidden;
+  color: var(--color-text-2);
+  font-size: 12px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.icon-btn {
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border: 0;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--color-text-2);
+  cursor: pointer;
+  transition-property: background-color, color;
+  transition-duration: var(--fast-ms);
+}
+
+.link {
+  border: 0;
+  background: none;
+  color: var(--color-text-2);
+  font: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.queue__send {
+  margin-top: 16px;
+}
+
+.queue__hint {
+  margin: 8px 0 0;
+  color: var(--color-text-2);
+  font-size: 13px;
+  text-align: center;
+}

@@ -1,0 +1,255 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+   If a copy of the MPL was not distributed with this file, You can obtain one at https://mozilla.org/MPL/2.0/. */
+
+/* Piezas reutilizables: tarjetas, botones, campos, pestañas, avisos. */
+
+.card {
+  padding: 16px;
+  /* Contenido interior con radio 12 + padding 16 = radio exterior 28. */
+  border-radius: var(--radius-xl);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-card);
+}
+
+.card__title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 4px;
+  font-size: 16px;
+  font-weight: 650;
+}
+
+.card__subtitle {
+  margin: 0 0 16px;
+  color: var(--color-text-2);
+  font-size: 14px;
+}
+
+/* Botones */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 0 18px 0 16px;
+  border: 1px solid transparent;
+  border-radius: var(--radius-md);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition-property: scale, opacity, background-color;
+  transition-duration: var(--press-ms);
+  transition-timing-function: var(--ease-out);
+}
+
+.btn:enabled:active {
+  scale: var(--press-scale);
+}
+
+.btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.btn--primary {
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+}
+
+.btn--secondary {
+  background: var(--color-surface);
+  border-color: var(--color-border);
+  color: var(--color-text);
+}
+
+.btn--block {
+  width: 100%;
+}
+
+@media (hover: hover) {
+  .btn--primary:enabled:hover {
+    background: var(--color-primary-hover);
+  }
+
+  .btn--secondary:enabled:hover {
+    background: var(--color-sunken);
+  }
+}
+
+/* Pestañas segmentadas: radio 12 + padding 4 = 16. */
+.tabs {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+  gap: 4px;
+  padding: 4px;
+  margin-bottom: 16px;
+  border-radius: var(--radius-lg);
+  background: var(--color-sunken);
+}
+
+.tabs__tab {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 36px;
+  padding: 0 12px;
+  border: 0;
+  border-radius: var(--radius-md);
+  background: transparent;
+  color: var(--color-text-2);
+  font: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition-property: background-color, color;
+  transition-duration: var(--fast-ms);
+  transition-timing-function: var(--ease-out);
+}
+
+.tabs__tab[aria-selected="true"],
+.tabs__tab[aria-pressed="true"] {
+  background: var(--color-surface);
+  color: var(--color-text);
+  box-shadow: var(--shadow-raised);
+}
+
+/* Campos */
+.field {
+  display: grid;
+  gap: 6px;
+  min-width: 0;
+  margin-bottom: 12px;
+}
+
+.field__label {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.field__input {
+  /* Sin esto el input usa su ancho por defecto y se sale de columnas angostas. */
+  width: 100%;
+  min-width: 0;
+  min-height: 44px;
+  padding: 0 12px;
+  border: 1px solid var(--color-input-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  color: var(--color-text);
+  font: inherit;
+  font-variant-numeric: tabular-nums;
+  transition-property: border-color;
+  transition-duration: var(--fast-ms);
+}
+
+.field__input::placeholder {
+  color: var(--color-text-3);
+}
+
+.field__input:focus-visible {
+  outline: 3px solid var(--color-primary-tint);
+  outline-offset: 0;
+  border-color: var(--color-primary);
+}
+
+.field__input[aria-invalid="true"] {
+  border-color: var(--color-error);
+}
+
+.field__hint {
+  color: var(--color-text-2);
+  font-size: 12px;
+}
+
+.field-row {
+  display: grid;
+  grid-template-columns: 1fr 110px;
+  gap: 12px;
+}
+
+/* Avisos */
+.notice {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  margin: 0 0 12px;
+  padding: 12px;
+  border-radius: var(--radius-md);
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.notice--info {
+  background: var(--color-info-tint);
+}
+
+.notice--success {
+  background: var(--color-success-tint);
+  color: var(--color-on-success-tint);
+}
+
+.notice--error {
+  background: var(--color-error-tint);
+  color: var(--color-on-error-tint);
+}
+
+/* Datos */
+.code {
+  font-family: "Cascadia Mono", Consolas, monospace;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.08em;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: var(--color-sunken);
+  color: var(--color-text);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-warning);
+}
+
+.dot--ok {
+  background: var(--color-success);
+}
+
+.empty {
+  display: grid;
+  justify-items: center;
+  gap: 8px;
+  padding: 32px 16px;
+  color: var(--color-text-2);
+  text-align: center;
+}
+
+.empty__icon {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  background: var(--color-sunken);
+  color: var(--color-text);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn:enabled:active {
+    scale: 1;
+  }
+}

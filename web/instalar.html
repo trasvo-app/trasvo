@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cómo instalar Trasvo en Windows y Android, paso a paso | Trasvo</title>
+  <meta name="description" content="Guía con capturas para instalar Trasvo en tu PC con Windows y en tu celular Android, incluidos los avisos de SmartScreen y Play Protect y qué tocar en cada uno.">
+  <meta name="theme-color" content="#1f6feb">
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="preload" href="assets/fonts/geist-latin-wght.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/site.css">
+  <script src="assets/site.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#contenido">Saltar al contenido</a>
+  <header class="top">
+    <div class="wrap top__in">
+      <a class="logo" href="./" aria-label="Trasvo, inicio"><img src="assets/logo.svg" alt="" width="32" height="32">Trasvo</a>
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav" aria-label="Menú"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+      <nav class="nav" id="nav" aria-label="Principal">
+        <a href="instalar.html" aria-current="page">Instalar</a>
+        <a href="ayuda.html">Ayuda</a>
+        <a href="preguntas.html">Preguntas</a>
+        <a href="seguridad.html">Seguridad</a>
+        <a class="gh" href="https://github.com/trasvo-app/trasvo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/></svg>Código</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido" class="wrap">
+    <div class="doc-hero">
+      <h1>Instalar Trasvo</h1>
+      <p>Son dos instalaciones: una en la PC y otra en el celular. Tardas unos tres minutos. Windows y Android te van a mostrar un aviso cada uno; aquí ves exactamente cuál y qué tocar.</p>
+      <button class="btn btn--ghost print-btn" type="button" data-print>Imprimir esta guía</button>
+    </div>
+
+    <div class="doc-layout">
+      <aside class="toc" aria-label="En esta página">
+        <h2>En esta página</h2>
+        <ol>
+          <li><a href="#descargas">Descargas</a></li>
+          <li><a href="#windows">En la PC (Windows)</a></li>
+          <li><a href="#android">En el celular (Android)</a></li>
+          <li><a href="#verificar">Comprobar el archivo</a></li>
+          <li><a href="#desinstalar">Desinstalar</a></li>
+        </ol>
+      </aside>
+
+      <article class="prose">
+        <h2 id="descargas">Descargas</h2>
+        <p>Versión <span data-version>0.1.0</span>. Las dos descargas salen de la página de versiones del proyecto en GitHub.</p>
+        <div class="dl">
+          <div class="dl__item">
+            <h3>Para la PC</h3>
+            <p class="dl__meta">Windows 10 u 11 · <span data-size="Trasvo-Setup-x64.exe">1,7 MB</span> · no pide permisos de administrador</p>
+            <a class="btn btn--primary" href="https://github.com/trasvo-app/trasvo/releases/latest/download/Trasvo-Setup-x64.exe">Descargar Trasvo-Setup-x64.exe</a>
+            <p class="hash">SHA-256: <span class="mono" data-hash="Trasvo-Setup-x64.exe">8dc4508a5d2d8bcdab5337a2f985d1887787d4f1811374c85a390ff46d1fcce2</span> · <button type="button" data-copy="Trasvo-Setup-x64.exe">Copiar</button></p>
+          </div>
+          <div class="dl__item">
+            <h3>Para el celular</h3>
+            <p class="dl__meta">Android 7.0 o más nuevo · <span data-size="Trasvo.apk">66 MB</span></p>
+            <a class="btn btn--primary" href="https://github.com/trasvo-app/trasvo/releases/latest/download/Trasvo.apk">Descargar Trasvo.apk</a>
+            <div class="qr" data-windows-note>
+              <img src="assets/img/qr-apk.svg" width="112" height="112" alt="Código QR con el enlace de descarga del APK.">
+              <span>¿Estás en la PC? Escanea este código con la cámara del celular para bajar el APK ahí.</span>
+            </div>
+            <p class="hash">SHA-256: <span class="mono" data-hash="Trasvo.apk">f9d819d63ec4f4edb0e1b296ace6da9d8d90007db3d6660dc8955eccf47ca06b</span> · <button type="button" data-copy="Trasvo.apk">Copiar</button></p>
+          </div>
+        </div>
+
+        <h2 id="windows">En la PC (Windows)</h2>
+        <ol class="steps">
+          <li>
+            <h3>Abre el instalador</h3>
+            <p>Abre <strong>Trasvo-Setup-x64.exe</strong> desde tu carpeta Descargas (o desde la barra de descargas del navegador).</p>
+          </li>
+          <li>
+            <h3>«Windows protegió su PC»: toca «Más información»</h3>
+            <p>Es el aviso de Microsoft Defender SmartScreen. Aparece con cualquier programa nuevo que no tiene firma digital paga. Al principio solo se ve el botón «No ejecutar»: toca el enlace <strong>Más información</strong>.</p>
+            <figure class="shot"><img src="assets/img/win-smartscreen-1.svg" width="640" height="400" loading="lazy" alt="Aviso azul Windows protegió su PC, con el enlace Más información marcado."><figcaption>Ilustración. El texto puede decir «su PC» o «tu PC» según tu Windows.</figcaption></figure>
+          </li>
+          <li>
+            <h3>Toca «Ejecutar de todas formas»</h3>
+            <p>Ahora aparece el nombre del archivo y «Editor desconocido», que quiere decir que no tiene firma. Toca <strong>Ejecutar de todas formas</strong>.</p>
+            <figure class="shot"><img src="assets/img/win-smartscreen-2.svg" width="640" height="400" loading="lazy" alt="El mismo aviso con el botón Ejecutar de todas formas marcado."><figcaption>Ilustración del segundo paso del aviso.</figcaption></figure>
+            <div class="callout" style="margin-top:20px">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8h.01M11 12h1v4h1"/></svg>
+              <p>En algunas PCs, en lugar de este aviso azul aparece una ventana gris, «Abrir archivo - Advertencia de seguridad», que dice que no se pudo comprobar el editor. Ahí toca <strong>Ejecutar</strong>. Si no aparece ningún aviso, sigue con el paso siguiente.</p>
+            </div>
+          </li>
+          <li>
+            <h3>Instala: Siguiente, Siguiente, Terminar</h3>
+            <p>Se abre el instalador de Trasvo. No hace falta cambiar nada: se instala solo para tu usuario, en tu carpeta de programas.</p>
+            <figure class="shot"><img src="assets/img/win-instalador-1.png" width="499" height="388" loading="lazy" alt="Pantalla de bienvenida del instalador de Trasvo con el botón Siguiente."><figcaption>Bienvenida: toca <strong>Siguiente</strong>.</figcaption></figure>
+            <figure class="shot"><img src="assets/img/win-instalador-2.png" width="499" height="388" loading="lazy" alt="Elegir lugar de instalación, con la carpeta ya completada."><figcaption>Carpeta de instalación: déjala como está y toca <strong>Siguiente</strong>.</figcaption></figure>
+            <figure class="shot"><img src="assets/img/win-instalador-4.png" width="499" height="388" loading="lazy" alt="Pantalla final con Ejecutar Trasvo marcado y el botón Terminar."><figcaption>Deja marcado <strong>Ejecutar Trasvo</strong> y toca <strong>Terminar</strong>.</figcaption></figure>
+          </li>
+          <li>
+            <h3>Si aparece el Firewall, permite «Redes privadas»</h3>
+            <p>La primera vez que se abre Trasvo, Windows puede preguntar si la dejas usar la red. Deja marcado <strong>Redes privadas</strong> y toca <strong>Permitir</strong>. Sin ese permiso el celular no puede encontrar la PC. No marques «Redes públicas».</p>
+          </li>
+        </ol>
+
+        <h2 id="android">En el celular (Android)</h2>
+        <ol class="steps">
+          <li>
+            <h3>Descarga el APK</h3>
+            <p>Desde el celular, abre esta página y toca <strong>Descargar Trasvo.apk</strong>, o escanea el código QR de arriba desde la PC. Si Chrome pregunta si quieres descargar el archivo igual, toca <strong>Descargar</strong>.</p>
+          </li>
+          <li>
+            <h3>Ábrelo y permite instalar desde esa app</h3>
+            <p>Toca la notificación de descarga, o abre <strong>Descargas</strong> y toca <strong>Trasvo.apk</strong>. La primera vez Android dice que por seguridad no puede instalar apps desconocidas de esa fuente: toca <strong>Configuración</strong>, activa <strong>Permitir de esta fuente</strong> y vuelve atrás.</p>
+            <p>Ese permiso es para Chrome (o la app con la que abriste el archivo). Puedes desactivarlo después de instalar.</p>
+          </li>
+          <li>
+            <h3>Toca «Instalar»</h3>
+            <figure class="shot shot--phone"><img src="assets/img/and-instalar.png" width="1030" height="535" loading="lazy" alt="Diálogo: Trasvo, ¿Deseas instalar esta app?, con los botones Cancelar e Instalar."><figcaption>Captura real, Android 16.</figcaption></figure>
+          </li>
+          <li>
+            <h3>Play Protect: deja que la analice</h3>
+            <p>Google Play Protect avisa que todavía no conoce la app y recomienda analizarla. Toca <strong>Analizar app</strong>: Google revisa el archivo y en unos segundos te dice si puedes seguir. Cuando diga «Esta app parece segura», toca <strong>Instalar</strong>.</p>
+            <figure class="shot shot--phone"><img src="assets/img/and-playprotect-1.png" width="908" height="1290" loading="lazy" alt="Google Play Protect: Se recomienda analizar la app, con los botones Analizar app y No instalar app."><figcaption>Toca <strong>Analizar app</strong>.</figcaption></figure>
+            <figure class="shot shot--phone"><img src="assets/img/and-playprotect-2.png" width="908" height="1140" loading="lazy" alt="Google Play Protect: Esta app parece segura, con el botón Instalar."><figcaption>Después, <strong>Instalar</strong>.</figcaption></figure>
+            <p>Si en tu celular el aviso es distinto y no ofrece analizar, busca <strong>Más detalles</strong> y luego <strong>Instalar de todas formas</strong>.</p>
+          </li>
+          <li>
+            <h3>Listo: toca «Abrir»</h3>
+            <figure class="shot shot--phone"><img src="assets/img/and-listo.png" width="1030" height="550" loading="lazy" alt="Diálogo: Se instaló la app, con los botones Listo y Abrir."><figcaption>Trasvo queda en tu lista de apps.</figcaption></figure>
+            <p>Con las dos instaladas, sigue en <a href="ayuda.html#conectar">Conectar la PC y el celular</a>.</p>
+          </li>
+        </ol>
+
+        <h2 id="verificar">Comprobar que el archivo es el original</h2>
+        <p>Cada descarga tiene una huella SHA-256: un código que cambia por completo si el archivo se modifica, aunque sea un byte. Si la huella de tu archivo coincide con la publicada aquí y en la <a href="https://github.com/trasvo-app/trasvo/releases">página de versiones</a>, es el mismo archivo que publicamos.</p>
+        <p>En Windows, abre PowerShell y escribe:</p>
+        <p><code>Get-FileHash $env:USERPROFILE\Downloads\Trasvo-Setup-x64.exe</code></p>
+        <p>Compara el resultado con la huella de <a href="#descargas">Descargas</a>. Si quieres una segunda opinión, puedes subir el archivo a <a href="https://www.virustotal.com/">VirusTotal</a>, que lo revisa con decenas de antivirus.</p>
+
+        <h2 id="desinstalar">Desinstalar</h2>
+        <ul>
+          <li><strong>Windows:</strong> Configuración → Aplicaciones → Aplicaciones instaladas → Trasvo → Desinstalar. Tus archivos recibidos se quedan donde estaban.</li>
+          <li><strong>Android:</strong> mantén presionado el ícono de Trasvo → Desinstalar. Lo recibido sigue en <code>Descargas/Trasvo</code>.</li>
+        </ul>
+        <p>¿Algo no salió como aquí? Escríbeme a <a href="mailto:trasvoapp@gmail.com">trasvoapp@gmail.com</a> o abre un reporte en <a href="https://github.com/trasvo-app/trasvo/issues">GitHub</a>.</p>
+      </article>
+    </div>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap">
+      <div class="foot__grid">
+        <div>
+          <a class="logo" href="./"><img src="assets/logo.svg" alt="" width="28" height="28">Trasvo</a>
+          <p class="foot__note">Hecha por un desarrollador independiente. Escríbeme a <a href="mailto:trasvoapp@gmail.com">trasvoapp@gmail.com</a>.</p>
+        </div>
+        <div><h4>Producto</h4><ul><li><a href="instalar.html">Instalar</a></li><li><a href="ayuda.html">Ayuda</a></li><li><a href="preguntas.html">Preguntas</a></li></ul></div>
+        <div><h4>Confianza</h4><ul><li><a href="seguridad.html">Seguridad</a></li><li><a href="https://github.com/trasvo-app/trasvo">Código fuente</a></li><li><a href="https://github.com/trasvo-app/trasvo/releases">Versiones y SHA-256</a></li></ul></div>
+        <div><h4>Legal</h4><ul><li><a href="privacidad.html">Privacidad</a></li><li><a href="terminos.html">Términos</a></li><li><a href="licencia.html">Licencia</a></li></ul></div>
+      </div>
+      <div class="foot__legal"><span>© 2026 Trasvo · Código abierto bajo MPL-2.0</span><span>Versión <span data-version>0.1.0</span></span></div>
+    </div>
+  </footer>
+</body>
+</html>

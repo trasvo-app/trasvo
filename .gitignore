@@ -1,0 +1,17 @@
+target/
+node_modules/
+dist/
+build/
+.dart_tool/
+.flutter-plugins*
+*.log
+.DS_Store
+.env
+*.jks
+*.keystore
+.claude/settings.local.json
+gen/
+key.properties
+release/
+.impeccable/review/
+.impeccable/decision/

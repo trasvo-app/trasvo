@@ -1,0 +1,220 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+   If a copy of the MPL was not distributed with this file, You can obtain one at https://mozilla.org/MPL/2.0/. */
+
+.qr {
+  display: grid;
+  grid-template-columns: 168px minmax(0, 1fr);
+  gap: 16px;
+  align-items: center;
+}
+
+.qr__frame {
+  /* Imagen con radio 4 + padding 8 = radio 12. Siempre blanco: el QR necesita contraste. */
+  padding: 8px;
+  border-radius: var(--radius-md);
+  background: #ffffff;
+  border: 1px solid var(--color-border);
+}
+
+.qr__frame img,
+.qr__placeholder {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 4px;
+}
+
+.qr__placeholder {
+  background: #efeff1;
+}
+
+.qr__data {
+  display: grid;
+  gap: 12px;
+  margin: 0;
+}
+
+.qr__data dt {
+  margin-bottom: 2px;
+  color: var(--color-text-2);
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.qr__data dd {
+  margin: 0;
+  font-weight: 600;
+}
+
+.qr__code {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: var(--radius-sm);
+  background: var(--color-primary-tint);
+  color: var(--color-primary);
+  font-size: 24px;
+}
+
+.steps {
+  margin: 12px 0 0;
+  padding-left: 20px;
+  color: var(--color-text-2);
+  line-height: 1.8;
+}
+
+.connected {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  border-radius: var(--radius-md);
+  background: var(--color-success-tint);
+}
+
+.connected__icon {
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--color-success);
+  color: #fff;
+}
+
+.connected__text {
+  display: grid;
+  flex: 1;
+  min-width: 0;
+}
+
+.connected__text span {
+  color: var(--color-text-2);
+  font-size: 13px;
+}
+
+.connected[data-reconnecting="true"] {
+  background: var(--color-warning-tint);
+}
+
+.connected[data-reconnecting="true"] .connected__icon {
+  background: var(--color-warning);
+}
+
+/* Dispositivos encontrados en el Wi-Fi */
+.nearby__searching {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 12px;
+  color: var(--color-text-2);
+  font-size: 14px;
+}
+
+.nearby__list {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nearby__item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  color: var(--color-text);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition-property: scale, border-color, background-color;
+  transition-duration: var(--press-ms);
+  transition-timing-function: var(--ease-out);
+}
+
+.nearby__item:enabled:active {
+  scale: var(--press-scale);
+}
+
+.nearby__item:disabled {
+  cursor: default;
+}
+
+.nearby__item[data-waiting="true"] {
+  border-color: var(--color-primary);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .nearby__item:enabled:hover {
+    background: var(--color-sunken);
+  }
+}
+
+.nearby__icon {
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-sm);
+  background: var(--color-primary-tint);
+  color: var(--color-primary);
+}
+
+.nearby__text {
+  display: grid;
+  flex: 1;
+  min-width: 0;
+}
+
+.nearby__text span {
+  overflow: hidden;
+  color: var(--color-text-2);
+  font-size: 13px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.nearby__item[data-waiting="true"] .nearby__text span {
+  color: var(--color-primary);
+}
+
+.nearby__action {
+  color: var(--color-primary);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.spinner {
+  flex: none;
+  width: 16px;
+  height: 16px;
+  border: 2px solid var(--color-primary-tint);
+  border-top-color: var(--color-primary);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    rotate: 360deg;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .spinner {
+    animation-duration: 2.4s;
+  }
+}
+
+.stack-sm {
+  display: grid;
+  gap: 4px;
+}

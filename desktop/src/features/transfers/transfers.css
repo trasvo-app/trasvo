@@ -1,0 +1,199 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+   If a copy of the MPL was not distributed with this file, You can obtain one at https://mozilla.org/MPL/2.0/. */
+
+.transfers {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.transfer {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 12px;
+  border-radius: var(--radius-md);
+  background: var(--color-sunken);
+}
+
+.transfer__icon {
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-sm);
+  background: var(--color-primary-tint);
+  color: var(--color-primary);
+}
+
+.transfer[data-status="done"] .transfer__icon {
+  background: var(--color-success-tint);
+  color: var(--color-success);
+}
+
+.transfer[data-status="failed"] .transfer__icon,
+.transfer[data-status="declined"] .transfer__icon {
+  background: var(--color-error-tint);
+  color: var(--color-error);
+}
+
+.transfer__body {
+  display: grid;
+  flex: 1;
+  gap: 2px;
+  min-width: 0;
+}
+
+.transfer__top {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.transfer__title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.transfer__pct {
+  margin-left: auto;
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+}
+
+.transfer__cancel {
+  flex: none;
+  font-size: 13px;
+}
+
+.transfer__status {
+  overflow: hidden;
+  color: var(--color-text-2);
+  font-size: 13px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.transfer[data-status="failed"] .transfer__status {
+  color: var(--color-error);
+  white-space: normal;
+}
+
+.progress {
+  height: 6px;
+  margin-top: 8px;
+  overflow: hidden;
+  border-radius: 3px;
+  background: var(--color-border);
+}
+
+.progress__fill {
+  height: 100%;
+  border-radius: 3px;
+  background: var(--color-primary);
+  transform-origin: left;
+  transition-property: transform;
+  transition-duration: var(--fast-ms);
+  transition-timing-function: linear;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .progress[data-indeterminate="true"] .progress__fill {
+    animation: progress-wait 1.2s ease-in-out infinite;
+  }
+
+  @keyframes progress-wait {
+    from {
+      translate: -100% 0;
+    }
+    to {
+      translate: 340% 0;
+    }
+  }
+}
+
+/* Diálogo de oferta entrante */
+.offer-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: rgb(0 0 0 / 0.4);
+}
+
+.offer {
+  display: grid;
+  gap: 16px;
+  width: min(440px, 100%);
+  padding: 24px;
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-overlay);
+}
+
+.offer h2 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.offer__files {
+  display: grid;
+  gap: 4px;
+  max-height: 180px;
+  margin: 0;
+  padding: 8px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  border-radius: var(--radius-md);
+  background: var(--color-sunken);
+  list-style: none;
+  font-size: 14px;
+}
+
+.offer__files li {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.offer__actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .offer {
+    animation: offer-enter var(--enter-ms) var(--ease-out) both;
+  }
+
+  @keyframes offer-enter {
+    from {
+      opacity: 0;
+      filter: blur(4px);
+      translate: 0 12px;
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .offer {
+    animation: offer-fade var(--enter-ms) var(--ease-out) both;
+  }
+
+  @keyframes offer-fade {
+    from {
+      opacity: 0;
+    }
+  }
+}

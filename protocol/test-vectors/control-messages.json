@@ -1,0 +1,78 @@
+[
+  {
+    "name": "hello",
+    "json": { "type": "hello", "version": 1, "device_id": "pc-1", "device_name": "Mi PC" }
+  },
+  {
+    "name": "pair_request",
+    "json": { "type": "pair_request", "token": "123456", "fingerprint": "" }
+  },
+  {
+    "name": "pair_accept",
+    "json": { "type": "pair_accept", "device_id": "pc-1" }
+  },
+  {
+    "name": "pair_reject",
+    "json": { "type": "pair_reject", "reason": "invalid_code" }
+  },
+  {
+    "name": "transfer_offer",
+    "json": {
+      "type": "transfer_offer",
+      "transfer_id": "t-1",
+      "files": [
+        { "name": "foto.jpg", "size": 2048 },
+        { "name": "Viaje/video.mp4", "size": 0 }
+      ]
+    }
+  },
+  {
+    "name": "transfer_accept",
+    "json": { "type": "transfer_accept", "transfer_id": "t-1" }
+  },
+  {
+    "name": "transfer_reject",
+    "json": { "type": "transfer_reject", "transfer_id": "t-1", "reason": "declined" }
+  },
+  {
+    "name": "file_end",
+    "json": {
+      "type": "file_end",
+      "transfer_id": "t-1",
+      "index": 0,
+      "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  {
+    "name": "transfer_done",
+    "json": { "type": "transfer_done", "transfer_id": "t-1" }
+  },
+  {
+    "name": "transfer_complete",
+    "json": { "type": "transfer_complete", "transfer_id": "t-1" }
+  },
+  {
+    "name": "transfer_error",
+    "json": { "type": "transfer_error", "transfer_id": "t-1", "reason": "hash_mismatch" }
+  },
+  {
+    "name": "cancel",
+    "json": { "type": "cancel", "transfer_id": "t-1" }
+  },
+  {
+    "name": "link_open",
+    "json": { "type": "link_open", "token": "0123456789abcdef0123456789abcdef", "port": 47520 }
+  },
+  {
+    "name": "link_accept",
+    "json": { "type": "link_accept" }
+  },
+  {
+    "name": "ping",
+    "json": { "type": "ping" }
+  },
+  {
+    "name": "link_close",
+    "json": { "type": "link_close" }
+  }
+]

@@ -1,0 +1,16 @@
+﻿{
+    "version":  "0.1.0",
+    "date":  "2026-10-28",
+    "files":  [
+                  {
+                      "name":  "Trasvo-Setup-x64.exe",
+                      "size":  1830081,
+                      "sha256":  "8dc4508a5d2d8bcdab5337a2f985d1887787d4f1811374c85a390ff46d1fcce2"
+                  },
+                  {
+                      "name":  "Trasvo.apk",
+                      "size":  68964418,
+                      "sha256":  "f9d819d63ec4f4edb0e1b296ace6da9d8d90007db3d6660dc8955eccf47ca06b"
+                  }
+              ]
+}

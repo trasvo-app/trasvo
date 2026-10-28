@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Licencia y componentes de terceros | Trasvo</title>
+  <meta name="description" content="Trasvo es código abierto bajo la Mozilla Public License 2.0. Resumen de la licencia y lista de componentes de terceros.">
+  <meta name="theme-color" content="#1f6feb">
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/geist-latin-wght.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/site.css">
+  <script src="assets/site.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#contenido">Saltar al contenido</a>
+  <header class="top">
+    <div class="wrap top__in">
+      <a class="logo" href="./" aria-label="Trasvo, inicio"><img src="assets/logo.svg" alt="" width="32" height="32">Trasvo</a>
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav" aria-label="Menú"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+      <nav class="nav" id="nav" aria-label="Principal">
+        <a href="instalar.html">Instalar</a>
+        <a href="ayuda.html">Ayuda</a>
+        <a href="preguntas.html">Preguntas</a>
+        <a href="seguridad.html">Seguridad</a>
+        <a class="gh" href="https://github.com/trasvo-app/trasvo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/></svg>Código</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido" class="wrap" style="padding-bottom:96px">
+    <div class="doc-hero">
+      <h1>Licencia</h1>
+      <p>Trasvo es código abierto bajo la <strong>Mozilla Public License 2.0</strong> (MPL-2.0).</p>
+    </div>
+    <article class="prose">
+      <h2>Qué significa, en corto</h2>
+      <p>Este resumen no reemplaza a la licencia; el texto que vale es el <a href="https://github.com/trasvo-app/trasvo/blob/main/LICENSE">texto completo de la MPL-2.0</a> (también en <a href="https://www.mozilla.org/MPL/2.0/">mozilla.org</a>).</p>
+      <ul>
+        <li><strong>Puedes</strong> usar Trasvo para lo que quieras, estudiar el código, modificarlo y redistribuirlo, también con fines comerciales.</li>
+        <li><strong>Si distribuyes</strong> una versión con cambios en los archivos de Trasvo, esos archivos modificados tienen que seguir abiertos bajo la MPL-2.0, y tienes que conservar los avisos de licencia.</li>
+        <li>Puedes combinar Trasvo con código bajo otras licencias, incluso cerrado, siempre que los archivos de Trasvo sigan bajo la MPL-2.0.</li>
+        <li>Se entrega <strong>sin garantías</strong>, como dicen las secciones 6 y 7 de la licencia.</li>
+        <li>La licencia no da derecho a usar el nombre ni el logo de Trasvo (sección 2.3).</li>
+      </ul>
+      <p>Elegimos la MPL-2.0 porque mantiene abierto el código de Trasvo y, a la vez, permite usar componentes como el lector de QR de Google, que no es de código abierto.</p>
+
+      <h2>Componentes de terceros</h2>
+      <p>Trasvo se construye con software de otros proyectos, cada uno con su licencia:</p>
+      <table>
+        <thead><tr><th>Componente</th><th>Para qué</th><th>Licencia</th></tr></thead>
+        <tbody>
+          <tr><td>Tauri</td><td>App de PC</td><td>MIT o Apache-2.0</td></tr>
+          <tr><td>React</td><td>Interfaz de la app de PC</td><td>MIT</td></tr>
+          <tr><td>Flutter y Dart</td><td>App del celular</td><td>BSD-3-Clause</td></tr>
+          <tr><td>Crates de Rust (tokio, serde, mdns-sd y otros)</td><td>Red y transferencias en la PC</td><td>MIT o Apache-2.0</td></tr>
+          <tr><td>Paquetes de Flutter (mobile_scanner, photo_manager, nsd y otros)</td><td>Cámara, galería y búsqueda en la red</td><td>MIT, BSD o Apache-2.0</td></tr>
+          <tr><td>Google ML Kit</td><td>Lectura de códigos QR</td><td><a href="https://developers.google.com/ml-kit/terms">Condiciones de Google</a> (no es código abierto)</td></tr>
+          <tr><td>WebView2</td><td>Motor de la ventana en Windows</td><td>Condiciones de Microsoft</td></tr>
+          <tr><td>Geist, Copyright 2024 The Geist Project Authors</td><td>Tipografía de este sitio</td><td><a href="assets/fonts/OFL.txt">SIL Open Font License 1.1</a></td></tr>
+        </tbody>
+      </table>
+      <p>El detalle de cada componente y su licencia está en <a href="https://github.com/trasvo-app/trasvo/blob/main/THIRD_PARTY_NOTICES.md">THIRD_PARTY_NOTICES.md</a>. La lista completa de dependencias con sus versiones está en los archivos <code>Cargo.lock</code>, <code>package-lock.json</code> y <code>pubspec.lock</code> del repositorio.</p>
+      <p>Windows, SmartScreen y WebView2 son marcas de Microsoft Corporation. Android, Google Play y Play Protect son marcas de Google LLC. GitHub es marca de GitHub, Inc. Trasvo no está afiliada ni respaldada por ellas.</p>
+    </article>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap">
+      <div class="foot__grid">
+        <div>
+          <a class="logo" href="./"><img src="assets/logo.svg" alt="" width="28" height="28">Trasvo</a>
+          <p class="foot__note">Hecha por un desarrollador independiente. Escríbeme a <a href="mailto:trasvoapp@gmail.com">trasvoapp@gmail.com</a>.</p>
+        </div>
+        <div><h4>Producto</h4><ul><li><a href="instalar.html">Instalar</a></li><li><a href="ayuda.html">Ayuda</a></li><li><a href="preguntas.html">Preguntas</a></li></ul></div>
+        <div><h4>Confianza</h4><ul><li><a href="seguridad.html">Seguridad</a></li><li><a href="https://github.com/trasvo-app/trasvo">Código fuente</a></li><li><a href="https://github.com/trasvo-app/trasvo/releases">Versiones y SHA-256</a></li></ul></div>
+        <div><h4>Legal</h4><ul><li><a href="privacidad.html">Privacidad</a></li><li><a href="terminos.html">Términos</a></li><li><a href="licencia.html">Licencia</a></li></ul></div>
+      </div>
+      <div class="foot__legal"><span>© 2026 Trasvo · Código abierto bajo MPL-2.0</span><span>Versión <span data-version>0.1.0</span></span></div>
+    </div>
+  </footer>
+</body>
+</html>

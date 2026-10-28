@@ -1,0 +1,47 @@
+[package]
+name = "file-transfer-desktop"
+version.workspace = true
+edition.workspace = true
+description = "Trasvo: archivos entre PC y celular (app de PC)"
+license = "MPL-2.0"
+
+[lib]
+# El sufijo `_lib` evita un conflicto de nombres en Windows (rust-lang/cargo#8519).
+name = "file_transfer_desktop_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = [] }
+tauri-plugin-dialog = "2"
+ft-core = { path = "crates/core" }
+ft-discovery = { path = "crates/discovery" }
+ft-pairing = { path = "crates/pairing" }
+ft-protocol = { path = "crates/protocol" }
+ft-transfer = { path = "crates/transfer" }
+ft-transports = { path = "crates/transports" }
+tokio = { version = "1", features = ["sync"] }
+serde.workspace = true
+serde_json.workspace = true
+
+[workspace]
+resolver = "2"
+members = [".", "crates/*"]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+
+[workspace.dependencies]
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+thiserror = "1"
+
+[profile.release]
+codegen-units = 1
+lto = true
+opt-level = 3
+panic = "abort"
+strip = true
